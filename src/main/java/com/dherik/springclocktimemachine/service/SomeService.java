@@ -2,19 +2,18 @@ package com.dherik.springclocktimemachine.service;
 
 import org.springframework.stereotype.Service;
 
-import java.time.Clock;
 import java.time.LocalDate;
 
 @Service
 public class SomeService {
 
-    private final Clock clock;
+    private final DeloreanComponent delorean;
 
-    public SomeService(Clock clock) {
-        this.clock = clock;
+    SomeService(DeloreanComponent delorean) {
+        this.delorean = delorean;
     }
 
-    public boolean process(LocalDate event) {
-        return event.isBefore(LocalDate.now(clock));
+    boolean process(LocalDate event) {
+        return event.isBefore(LocalDate.now(delorean.getClock()));
     }
 }

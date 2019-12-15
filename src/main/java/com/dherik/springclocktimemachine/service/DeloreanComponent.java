@@ -13,11 +13,11 @@ public class DeloreanComponent {
         this.clock = clock;
     }
 
-    public void setClock(Clock clock) {
+    void setClock(Clock clock) {
         this.clock = clock;
     }
 
-    public Clock getClock() {
+    Clock getClock() {
         return clock;
     }
 }
