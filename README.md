@@ -1,6 +1,6 @@
 # spring-clock-time-machine
 
-Project example showing how manipulate the time of your Java application using clock. Very useful for manual testing.
+Project example showing how manipulate the time of your Java application using clock. Very useful for manual testing that needs to change the time of the application to produce some past/future scenarios.
 
 # Build & Run
 
@@ -19,3 +19,21 @@ I create some endpoints to illustrate the working code. All endpoints are using 
  # Code implementation details
 
  This was just a fast example on how you can manipulate the time of your Java application. I create a `DeloreanComponent`, which is responsable to offer a `Clock` implementation. You can pass the time that you want for the Delorean travel to it and ask Delorean what time it is in at the moment. :).
+ 
+ To your code work using the Deloren time machine, all java.time classes that uses `now()` method (LocalDate, LocalDateTime, etc) will depends of the clock from the `DeloreanComponent`, like:
+ 
+ ```java
+ class RandomService {
+ 
+   private DeloreanComponent delorean;
+   
+   //constructor
+   
+   public boolean isBefore(LocalDate event) {
+       return event.isBefore(LocalDate.now(delorean.getClock());
+   }
+ 
+ }
+```
+
+The actual implementation depends of the `DeloreanComponent`, but ideally we could use just the `Clock` bean, but I could think on a short time on how replace the `Clock` bean at runtime without a bean intermediating that.
