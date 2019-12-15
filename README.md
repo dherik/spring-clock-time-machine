@@ -36,4 +36,4 @@ I create some endpoints to illustrate the working code. All endpoints are using 
  }
 ```
 
-The actual implementation depends of the `DeloreanComponent`, but ideally we could use just the `Clock` bean, but I could think on a short time on how replace the `Clock` bean at runtime without a bean intermediating that.
+The actual implementation depends of the `DeloreanComponent`, but ideally we could use just the `Clock` bean, but I could not think on a short time on how replace the `Clock` bean at runtime without a bean proxying that.
