@@ -23,6 +23,7 @@ I create some endpoints to illustrate the working code. All endpoints are using 
  To your code work using the Deloren time machine, all java.time classes that uses `now()` method (LocalDate, LocalDateTime, etc) will depends of the clock from the `DeloreanComponent`, like:
  
  ```java
+ @Service
  class RandomService {
  
    private DeloreanComponent delorean;
