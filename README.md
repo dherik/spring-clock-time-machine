@@ -4,7 +4,7 @@ Project example showing how manipulate the time of your Java application using c
 
 # Build & Run
 
-Just build and start the application as any Spring application.
+Just build and start the application as any Spring Boot application.
 
 # How it works
 
