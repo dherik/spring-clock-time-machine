@@ -16,4 +16,4 @@ I create some endpoints to illustrate the working code. All endpoints are using 
 
  # Code implementation details
 
- This was just a fast example on how you can manipulate the time of your Java application. I create a `DeloreanComponent` what is responsable to offer a `Clock` implementation. You can pass the time that you want to the Delorean travel and ask for the Delorean what time it in right now :).
+ This was just a fast example on how you can manipulate the time of your Java application. I create a `DeloreanComponent`, which is responsable to offer a `Clock` implementation. You can pass the time that you want for the Delorean travel to it and ask Delorean what time it is in at the moment. :).
