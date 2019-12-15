@@ -14,20 +14,24 @@ import static org.mockito.Mockito.when;
 class SomeServiceTest {
 
     @Test
-    void process() {
+    void processEventDate() {
 
-        LocalDateTime primeiroJaneiro2018 = LocalDate.of(2018, 1, 1).atStartOfDay();
-        Clock clock = Clock.fixed(primeiroJaneiro2018.atZone(ZoneId.systemDefault()).toInstant(),
+        LocalDateTime firstJanuary2018 = LocalDate.of(2018, 1, 1).atStartOfDay();
+        Clock clockChanged = Clock.fixed(firstJanuary2018.atZone(ZoneId.systemDefault()).toInstant(),
                 ZoneId.systemDefault());
 
-        DeloreanComponent deloreanComponent = mock(DeloreanComponent.class);
-        when(deloreanComponent.getClock())
-                .thenReturn(clock);
+        DeloreanComponent deloreanComponent = mockDeloreanComponent(clockChanged);
 
         SomeService someService = new SomeService(deloreanComponent);
 
         LocalDate eventDate = LocalDate.of(2017, 5, 5);
-        boolean process = someService.process(eventDate);
-        assertTrue(process);
+        boolean isBefore = someService.isEventDateBeforeToday(eventDate);
+        assertTrue(isBefore);
+    }
+
+    private DeloreanComponent mockDeloreanComponent(Clock clock) {
+        DeloreanComponent deloreanComponent = mock(DeloreanComponent.class);
+        when(deloreanComponent.getClock()).thenReturn(clock);
+        return deloreanComponent;
     }
 }

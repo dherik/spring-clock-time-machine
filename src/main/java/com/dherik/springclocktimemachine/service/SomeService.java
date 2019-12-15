@@ -13,7 +13,7 @@ public class SomeService {
         this.delorean = delorean;
     }
 
-    boolean process(LocalDate event) {
+    boolean isEventDateBeforeToday(LocalDate event) {
         return event.isBefore(LocalDate.now(delorean.getClock()));
     }
 }
