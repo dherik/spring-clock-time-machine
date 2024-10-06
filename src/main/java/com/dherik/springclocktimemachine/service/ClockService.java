@@ -4,7 +4,6 @@ import com.dherik.springclocktimemachine.controller.ClockResponse;
 import org.springframework.stereotype.Service;
 
 import java.time.Clock;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 

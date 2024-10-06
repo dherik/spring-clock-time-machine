@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class ClockResponse {
 
-    private LocalDateTime date;
+    private final LocalDateTime date;
 
     public ClockResponse(LocalDateTime date) {
         this.date = date;

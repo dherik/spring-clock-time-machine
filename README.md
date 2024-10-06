@@ -20,7 +20,7 @@ I create some endpoints to illustrate the working code. All endpoints are using 
 
  This was just a fast example on how you can manipulate the time of your Java application. I create a `DeloreanComponent`, which is responsable to offer a `Clock` implementation. You can pass the time that you want for the Delorean travel to it and ask Delorean what time it is in at the moment. :).
  
- To your code work using the Deloren time machine, all java.time classes that uses `now()` method (LocalDate, LocalDateTime, etc) will depends of the clock from the `DeloreanComponent`, like:
+ To your code work using the Delorean time machine, all java.time classes that uses `now()` method (LocalDate, LocalDateTime, etc) will depends of the clock from the `DeloreanComponent`, like:
  
  ```java
  @Service
@@ -31,10 +31,10 @@ I create some endpoints to illustrate the working code. All endpoints are using 
    //constructor
    
    public boolean isBefore(LocalDate event) {
-       return event.isBefore(LocalDate.now(delorean.getClock());
+       return event.isBefore(LocalDate.now(delorean.getClock()));
    }
  
  }
 ```
 
-The actual implementation depends of the `DeloreanComponent`, but ideally we could use just the `Clock` bean, but I could not think on a short time on how replace the `Clock` bean at runtime without a bean proxying that.
+The actual implementation depends on the `DeloreanComponent`, but ideally we could use just the `Clock` bean, but I could not think on a short time on how replace the `Clock` bean at runtime without a bean proxying that.
